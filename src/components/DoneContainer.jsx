@@ -1,9 +1,16 @@
 import "../App.css";
 
-import React from "react";
+import React, { useContext } from "react";
 import Done from "./Done";
+import MyContext from "../context/MyContext";
 
-const DoneContainer = ({ taskDone , handleDelete, handleTick }) => {
+const DoneContainer = () => {
+
+  const context = useContext(MyContext)
+  const {taskDone} = context
+
+
+
   return (
     <aside className="doneContainer">
         
@@ -12,8 +19,6 @@ const DoneContainer = ({ taskDone , handleDelete, handleTick }) => {
           <Done
             key={element.id}
             element={element}
-            handleDelete={handleDelete}
-            handleTick={handleTick}
             taskDone={taskDone}
           />
         ))

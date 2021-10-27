@@ -1,8 +1,13 @@
-import React from "react";
-
+import React, { useContext } from "react";
+import MyContext from "../context/MyContext";
 import { v4 as uuid } from "uuid";
 
-const Form = ({ task, setTask, handleSubmit, inputRef }) => {
+const Form = () => {
+
+  const context = useContext(MyContext)
+  const {task, setTask, handleSubmit, inputRef } = context
+
+
   return (
     <form className="form">
       <label className="taskName">- Enter task - </label>
@@ -16,7 +21,7 @@ const Form = ({ task, setTask, handleSubmit, inputRef }) => {
         ref={inputRef}
         
       />
-      <button className="buttonAdd"onClick={handleSubmit}>Add</button>
+      <button className="buttonAdd" onClick={handleSubmit}>Add</button>
     </form>
   );
 };
