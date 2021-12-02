@@ -1,19 +1,22 @@
 import React from "react";
+import todo2 from "../../assets/todo2.png";
+import styled from 'styled-components'
 
-import todo2 from "../assets/todo2.png";
-import Form from "./Form";
 
+const HeaderContainer = styled.header`
+border: 2px solid red;
+`
 
 const Header = () => {
   return (
-    <header>
+    <HeaderContainer>
       <div className="title">To Do List</div>
       <div className="logo">
         <img src={todo2} alt="logo" />
-        <Form/>
+      
       </div>
       
-    </header>
+    </HeaderContainer>
   );
 };
 
