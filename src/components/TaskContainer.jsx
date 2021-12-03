@@ -1,9 +1,15 @@
 import "../App.css";
 
-import React from "react";
+import React, { useContext } from "react";
 import Task from "./Task";
+import MyContext from "../context/MyContext";
 
-const TaskContainer = ({ tasksArray, handleDelete, handleTick }) => {
+const TaskContainer = () => {
+
+  const context = useContext(MyContext)
+  const {tasksArray} = context
+
+
   return (
     <aside className="taskContainer">
       {tasksArray.length > 0 ? (
@@ -11,9 +17,6 @@ const TaskContainer = ({ tasksArray, handleDelete, handleTick }) => {
           <Task
             key={element.id}
             element={element}
-            handleDelete={handleDelete}
-            handleTick={handleTick}
-            tasksArray={tasksArray}
           />
         ))
       ) : (

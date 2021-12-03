@@ -1,12 +1,18 @@
 import "../App.css";
 import { TiTick } from "react-icons/ti";
-import React from "react";
+import React, { useContext } from "react";
 
 import bin1 from "../assets/bin1.png";
 import openbin from "../assets/openbin.png";
 import remove1 from "../assets/remove1.png";
+import MyContext from "../context/MyContext";
 
-const Task = ({ element, handleDelete, handleTick, tasksArray }) => {
+const Task = ({ element }) => {
+
+  const context = useContext(MyContext)
+  const {handleDelete, handleTick, tasksArray} = context
+
+
   return (
     <div className="taskDisplay">
       <div className="tick">

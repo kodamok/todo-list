@@ -3,21 +3,12 @@ import TaskContainer from "./TaskContainer";
 
 import DoneContainer from "./DoneContainer";
 
-const Section = ({ tasksArray, handleDelete, handleTick, taskDone }) => {
+const Section = () => {
   return (
     <section className="section">
-      <TaskContainer
-        tasksArray={tasksArray}
-        handleDelete={handleDelete}
-        handleTick={handleTick}
-        taskDone={taskDone}
-      />
+      <TaskContainer/>
 
-      <DoneContainer
-        handleDelete={handleDelete}
-        handleTick={handleTick}
-        taskDone={taskDone}
-      />
+      <DoneContainer/>
     </section>
   );
 };

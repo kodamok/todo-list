@@ -1,12 +1,17 @@
 import "../App.css";
 import {BiArrowBack} from "react-icons/bi";
-import React  from "react";
+import React,{useContext}  from "react";
 
 import bin1 from "../assets/bin1.png";
 import openbin from "../assets/openbin.png";
 import remove1 from "../assets/remove1.png";
+import MyContext from "../context/MyContext";
 
-const Done = ({ element, handleDelete, handleTick, taskDone }) => {
+const Done = ({element}) => {
+
+  const context = useContext(MyContext)
+  const {handleDelete, handleTick, taskDone} = context
+
   return (
     <div className="taskDisplay">
       <div className="tick">
